@@ -12,6 +12,15 @@ an erb file called 'index' (see app.rb for e.g.)-->
    <img src='http://bit.ly/1eze8aE' style='border: 4px solid pink'>
  </div>
 
+<!--we can introduce ruby if statements using erb ice cream cone syntax.
+The cones have to open and close before the html and cannot contain the html.
+The below will only display the text 'my name is' if a value has
+been added for the key name via the param.-->
+<% if @name %>
  <h1>My name is <%= @name %></h1>
+<% end %>
 
- <!--<h1>My name is <%=["Amigo", "Oscar", "Viking"].sample%></h1>-->
+<form action="/named-cat" >
+  <input type="text" name="name">
+  <input type="submit" value="Submit">
+</form>
