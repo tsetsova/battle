@@ -40,7 +40,6 @@ get '/ina' do
   "Mood ring says ----> is awesome!"
 end
 
-
 #http://localhost:4567/cat
 
 #<div></div> is a box to put the picture in, you can specify it's size or
@@ -53,6 +52,16 @@ end
 #inline within the opening tag (eg. <div> or <img src=>). However on a normal webpage where you want all images to be formatted
 #and boardered in the same way you would have a separate file that sets the CSS style.
 
-get '/cat' do
+get '/random-cat' do
+  @name = ["Amigo", "Oscar", "Viking"].sample
+  erb(:index) #this links to the presentation concerns included in index.erb
+end
+
+
+#The below version where the instance variable links to a params allows you to add a query string '?' and use the key :name and assign a
+#a value, such as 'James'. So if the end of the address line was "/named-cat/?name=James" it would show "My name is James"
+get '/named-cat' do
+  p params #shows the key/value pair in the terminal
+  @name = params[:name]
   erb(:index) #this links to the presentation concerns included in index.erb
 end
