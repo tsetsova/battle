@@ -32,13 +32,7 @@ end
 
 #http://localhost:4567/cat
 get '/cat' do
-  <!DOCTYPE html>
-<html>
-	<head>
-		<title></title>
-	</head>
-	<body>
-		<img src="http://bit.ly/1eze8aE" />
-	</body>
-</html>
-end
+    "<div>
+      <img src='http://bit.ly/1eze8aE'>
+     </div>"
+  end
