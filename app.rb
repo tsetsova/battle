@@ -30,9 +30,31 @@ get '/rachel' do
   "Mood ring says ----> Is a terrible drunk"
 end
 
+#http://localhost:4567/heather
+get '/heather' do
+  "Mood ring says ----> it is nearly Heather's birthday!"
+end
+
+#http://localhost:4567/ina
+get '/ina' do
+  "Mood ring says ----> is awesome!"
+end
+
+
 #http://localhost:4567/cat
+
+#<div></div> is a box to put the picture in, you can specify it's size or
+#take the browser default, this may be the image size or a padded version. (You can use CSS reset
+#to clear these browser settings)
+
+# <img src= "the link to the picture"> is the html code to put up images, it does not have a closing tag
+
+#The text "style='border: 3px dashed red'" is the CSS bit to put the boarder on. When you are just doing a little bit of CSS you can put it
+#inline within the opening tag (eg. <div> or <img src=>). However on a normal webpage where you want all images to be formatted
+#and boardered in the same way you would have a separate file that sets the CSS style.
+
 get '/cat' do
-    "<div>
-      <img src='http://bit.ly/1eze8aE'>
-     </div>"
-  end
+  "<div>
+     <img src='http://bit.ly/1eze8aE' style='border: 4px solid pink'>
+   </div>"
+end
