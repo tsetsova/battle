@@ -54,7 +54,5 @@ end
 #and boardered in the same way you would have a separate file that sets the CSS style.
 
 get '/cat' do
-  "<div>
-     <img src='http://bit.ly/1eze8aE' style='border: 4px solid pink'>
-   </div>"
+  erb(:index) #this links to the presentation concerns included in index.erb
 end
