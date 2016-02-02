@@ -57,10 +57,13 @@ get '/random-cat' do
   erb(:index) #this links to the presentation concerns included in index.erb
 end
 
-
+#http://localhost:4567/form
+get '/cat_form' do
+  erb(:cat_form)
+end
 #The below version where the instance variable links to a params allows you to add a query string '?' and use the key :name and assign a
 #a value, such as 'James'. So if the end of the address line was "/named-cat/?name=James" it would show "My name is James"
-get '/named-cat' do
+post '/named-cat' do
   p params #shows the key/value pair in the terminal
   @name = params[:name]
   erb(:index) #this links to the presentation concerns included in index.erb
