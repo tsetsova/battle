@@ -1,11 +1,17 @@
 <div> 
 
-<h1>Hellooo <%=@name_one%> vs. <%=@name_two%></h1>
+<h1>Hellooo <%=$player[:player_1].name%> vs. <%=$player[:player_2].name%></h1>
 
-<h2> <%=@name_two%>'s health: 20hp </h2>
+<h2> <%=$player[:player_2].name%>'s health: 20hp </h2>
 
-<form action = "/attack">
-	<input type='submit' value="Attack <%=@name_two%>">
+<form action = "/attack" method = "post">
+	<input type='submit' name = "attack" value="Attack <%=$player[:player_2].name%>">
 </form>
- </div>
+
+
+<%if @attack %>
+	<h3>You attacked <%=$player[:player_2].name%></h3>
+<%end %>
+
+</div>
 

@@ -1,9 +1,19 @@
-<div>HELLOOOO ERB!</div>
+<!DOCTYPE html>
+	<html lang="en">
+  	<head>
+	  	<meta charset="utf-8">
+	    <title>Battle game</title>
+	    <link href="css/bootstrap.min.css" rel="stylesheet">
+  	</head>
 
-<form action="/names" method="post">
-	<label>Player 1</label>
-	<input type="text" name="name_one" id="name_one">
-	<label>Player 2</label>
-	<input type="text" name="name_two" id="name_two">
-	<input type="submit" value="Submit">
-</form>
+  	<body>
+
+  		<form action="/names" method="post">
+				<label>Player 1 name:</label>
+				<input type="text" name="name_one" id="name_one">
+				<label>Player 2 name:</label>
+				<input type="text" name="name_two" id="name_two">
+				<input type="submit" value="Submit">
+			</form>
+  	</body>
+

@@ -1,30 +1,29 @@
 require 'sinatra/base'
-require 'shotgun'
+# require 'shotgun'
 
 class Battle < Sinatra::Base
 
   enable :sessions
 
   get '/' do
+  	$player = {}
     erb(:index)
   end
 
   post '/names' do
-  	session[:name_one] = params[:name_one]
-    session[:name_two] = params[:name_two]
+   	$player[:player_1] = Player.new(name: params[:name_one])
+   	$player[:player_2] = Player.new(name: params[:name_two])
     redirect to('/play')
   end
 
   get '/play' do
-    @name_one = session[:name_one]
-    @name_two = session[:name_two]
+  	@attack = session[:attack]
     erb(:play)
   end
 
-  get '/attack' do
-  	@name_one = session[:name_one]
-    @name_two = session[:name_two]
-    erb(:attack)
+  post '/attack' do
+  	session[:attack] = params[:attack]
+    redirect to('/play')
   end
 
   # start the server if ruby file executed directly
