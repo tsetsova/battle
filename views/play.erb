@@ -11,18 +11,19 @@
   <div class="container-fluid">
     <div class="row text-center">
       <div class="col-md-10 col-xs-8">
-				<h1>Hellooo <%=$player[:player_1].name%> vs. <%=$player[:player_2].name%></h1>
+				<h1>Hellooo <%=$game.player_1.name%> vs. <%=$game.player_2.name%></h1>
 
-				<h2> <%=$player[:player_2].name%>'s health: <%=$player[:player_2].health%>hp </h2>
+				<h2> <%=$game.opponent.name%>'s health: <%=$game.opponent.health%>hp </h2>
 
 				<form action = "/attack" method = "post">
-					<input type='submit' name = "attack" value="Attack <%=$player[:player_2].name%>">
+					<input type='submit' name = "attack" value="Attack <%=$game.opponent.name%>">
 				</form>
 
 
 				<%if @attack %>
-					<h3>You attacked <%=$player[:player_2].name%></h3>
-					<h3><%=$player[:player_2].name%>'s health is down 2 points</h3>
+					<h3>You attacked <%=$game.opponent.name%></h3>
+					<h3><%=$game.opponent.name%>'s health is down 2 points</h3>
+					<h3>Now it's <%=$game.turn.name%>'s turn to attack!</h3>
 				<%end %>
 			</div>
 		</div>	
