@@ -1,0 +1,9 @@
+body {
+		background-image: url('skulls.png');
+		background-repeat: repeat;
+}
+
+.vertical-align {
+  vertical-align: middle;
+}
+

@@ -7,4 +7,12 @@ describe Player do
 	it "checks a person has a name" do
 		expect(player.name).to eq "Mug"
 	end
+
+	it "checks a person has hp" do
+		expect(player.health).to eq 100
+	end
+
+	it "reduces hp after an attack" do
+		expect{player.reduce_hp(10)}.to change {player.health}.by -10
+	end
 end
