@@ -4,11 +4,17 @@ class Player
 
 	def initialize(name: "Mug")
 		@name = name
-		@health = 100
+		@health = DEF_HP
 	end
 
 	def receive_damage(damage = 2)
 		@health -= damage
 	end
 
+	def attack(player)
+		player.receive_damage
+	end
+
+	private
+		DEF_HP = 100
 end

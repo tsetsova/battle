@@ -26,7 +26,7 @@ class Battle < Sinatra::Base
 
   post '/attack' do
   	session[:attack] = params[:attack]
-  	$player[:player_2].receive_damage
+  	$player[:player_1].attack($player[:player_2])
     redirect to('/play')
   end
 

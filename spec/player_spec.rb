@@ -2,17 +2,23 @@ require 'player'
 
 describe Player do
 
-	subject(:player){described_class.new(name: "Mug")}
+	subject(:mug){described_class.new(name: "Mug")}
+	subject(:monkey){described_class.new(name: "Monkey")}
 
 	it "checks a person has a name" do
-		expect(player.name).to eq "Mug"
+		expect(mug.name).to eq "Mug"
 	end
 
 	it "checks a person has hp" do
-		expect(player.health).to eq 100
+		expect(mug.health).to eq 100
+	end
+
+	it "damages player" do
+		expect(mug).to receive(:receive_damage)
+		monkey.attack(mug)
 	end
 
 	it "reduces hp after an attack" do
-		expect{player.receive_damage(10)}.to change {player.health}.by -10
+		expect{mug.receive_damage(10)}.to change {mug.health}.by -10
 	end
 end
