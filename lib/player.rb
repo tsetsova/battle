@@ -11,10 +11,6 @@ class Player
 		@health -= damage
 	end
 
-	def attack(player)
-		player.receive_damage
-	end
-
 	private
 		DEF_HP = 100
 end

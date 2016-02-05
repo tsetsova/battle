@@ -13,11 +13,6 @@ describe Player do
 		expect(mug.health).to eq 100
 	end
 
-	it "damages player" do
-		expect(mug).to receive(:receive_damage)
-		monkey.attack(mug)
-	end
-
 	it "reduces hp after an attack" do
 		expect{mug.receive_damage(10)}.to change {mug.health}.by -10
 	end
