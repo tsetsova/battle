@@ -20,14 +20,13 @@ class Battle < Sinatra::Base
   end
 
   get '/play' do
-  	@player1_name = $player[:player_1].name 
-  	@player2_name = $player[:player_2].name
   	@attack = session[:attack]
     erb(:play)
   end
 
   post '/attack' do
   	session[:attack] = params[:attack]
+  	$player[:player_2].receive_damage
     redirect to('/play')
   end
 

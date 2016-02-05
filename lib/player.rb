@@ -5,10 +5,10 @@ class Player
 	def initialize(name: "Mug")
 		@name = name
 		@health = 100
-
 	end
 
-	def reduce_hp(damage)
+	def receive_damage(damage = 2)
 		@health -= damage
 	end
+
 end

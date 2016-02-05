@@ -13,6 +13,6 @@ describe Player do
 	end
 
 	it "reduces hp after an attack" do
-		expect{player.reduce_hp(10)}.to change {player.health}.by -10
+		expect{player.receive_damage(10)}.to change {player.health}.by -10
 	end
 end
